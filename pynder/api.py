@@ -91,3 +91,6 @@ class TinderAPI(object):
         if 'limit_exceeded' in result and result['limit_exceeded']:
             raise errors.RequestError("Superlike limit exceeded")
         return result
+
+    def get_all_friends(self):
+        return self._get("/group/friends")
